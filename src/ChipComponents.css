@@ -1,0 +1,141 @@
+.app-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f9f7f7; /* Dark background color */
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 90px;
+  background-color: white; /* Light background color for the inner box */
+  color: #000000; /* Text color */
+  border-radius: 10px; /* Add border-radius for rounded corners */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0); /* Add a subtle box shadow */
+}
+
+.neon-heading {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  color: #004080; /* Deeper blue color */
+  text-shadow: 0 0 10px #004080, 0 0 20px #004080, 0 0 30px #004080;
+  animation: neonBlink 1s infinite alternate;
+}
+
+@keyframes neonBlink {
+  from {
+    opacity: 0.8;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.chip-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+input {
+  padding: 10px;
+  margin-top: 10px;
+  font-size: 16px;
+  border: none;
+  border-bottom: 2px solid #004080; /* Darker blue color for selection box */
+  outline: none;
+  transition: border-bottom 0.3s ease; /* Add smooth transition */
+}
+
+input:focus {
+  border-bottom: 2px solid #ff8c00; /* Orange color on focus */
+}
+
+.user-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  max-height: 150px;
+  overflow-y: auto;
+  border: none;
+  border-radius: 4px;
+}
+
+.user-list li {
+  padding: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border: 0px solid white;
+  background-color: white;
+  border-radius: 0px;
+  margin-bottom: 5px;
+}
+
+.user-list li:hover {
+  background-color: #f0f0f0;
+}
+
+.chip {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border: 1px solid white;
+  border-radius: 20px; /* Make the whole box cylindrical */
+  padding: 8px;
+  margin-right: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+}
+
+.chip.selected {
+  border: none;
+  border-radius: 20px; /* Make the whole box cylindrical */
+}
+
+.chip-profile-picture {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 8px;
+  object-fit: cover;
+}
+
+.chip-profile-picture.cylindrical {
+  /* border-radius: 50% 0 0 50%; Remove this line to make only the whole box cylindrical */
+}
+
+.chip-label {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #004080; /* Deeper blue color */
+}
+
+.chip-email {
+  color: #666; /* Grey color */
+  margin-left: 8px;
+}
+
+.chip-delete {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: #666;
+  margin-left: auto;
+}
+
+.highlighted {
+  animation: highlight 0.2s ease;
+}
+
+@keyframes highlight {
+  from {
+    background-color: #ffe6e6;
+  }
+  to {
+    background-color: #fff;
+  }
+}
